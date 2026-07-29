@@ -1,0 +1,19 @@
+import { Navigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+import LoadingScreen from "./LoadingScreen";
+
+function ProtectedRoute({ children }) {
+    const { isAuthenticated, isLoading } = useAuth();
+
+    if (isLoading) {
+        return <LoadingScreen message="Checking your session..." />;
+    }
+
+    if (!isAuthenticated) {
+        return <Navigate to="/login" replace />;
+    }
+
+    return children;
+}
+
+export default ProtectedRoute;

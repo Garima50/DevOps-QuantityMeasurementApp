@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Quantity Measurement</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>Welcome To Quantity Measurement</h1>
+
+    </header>
+
+    <section>
+
+        <h4>CHOOSE TYPE</h4>
+
+        <div class="quantity-cards">
+
+            <div class="card active"
+                 data-type="LENGTH">
+
+                <img src="images/length.png">
+
+                <p>Length</p>
+
+            </div>
+
+            <div class="card"
+                 data-type="WEIGHT">
+
+                <img src="images/weight.png">
+
+                <p>Weight</p>
+
+            </div>
+
+            <div class="card"
+                 data-type="TEMPERATURE">
+
+                <img src="images/temperature.png">
+
+                <p>Temperature</p>
+
+            </div>
+
+            <div class="card"
+                 data-type="VOLUME">
+
+                <img src="images/volume.png">
+
+                <p>Volume</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <h4>CHOOSE ACTION</h4>
+
+        <div class="action-buttons">
+
+            <button id="compareBtn"
+                    class="active">
+                Comparison
+            </button>
+
+            <button id="convertBtn">
+                Conversion
+            </button>
+
+            <button id="arithmeticBtn">
+                Arithmetic
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="comparisonSection" class="content-section">
+
+        <div class="input-group">
+
+            <div class="field">
+
+                <label>FROM</label>
+
+                <input
+                        type="number"
+                        id="compareValue1"
+                        placeholder="Enter Value">
+
+                <select id="compareUnit1">
+
+                </select>
+
+            </div>
+
+            <div class="field">
+
+                <label>TO</label>
+
+                <input
+                        type="number"
+                        id="compareValue2"
+                        placeholder="Enter Value">
+
+                <select id="compareUnit2">
+
+                </select>
+
+            </div>
+
+        </div>
+
+        <button id="compareButton">
+            Compare
+        </button>
+
+        <div class="result-box">
+
+            <h3>Result</h3>
+
+            <p id="compareResult">
+
+                -
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <section
+            id="conversionSection"
+            class="content-section"
+            style="display:none;">
+
+        <div class="input-group">
+
+            <div class="field">
+
+                <label>VALUE</label>
+
+                <input
+                        type="number"
+                        id="convertValue"
+                        placeholder="Enter Value">
+
+                <select id="convertFromUnit">
+
+                </select>
+
+            </div>
+
+            <div class="field">
+
+                <label>CONVERT TO</label>
+
+                <select id="convertToUnit">
+
+                </select>
+
+            </div>
+
+        </div>
+
+        <button id="convertButton">
+
+            Convert
+
+        </button>
+
+        <div class="result-box">
+
+            <h3>Converted Value</h3>
+
+            <p id="convertResult">
+
+                -
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section
+            id="arithmeticSection"
+            class="content-section"
+            style="display:none;">
+
+        <div class="input-group">
+
+            <div class="field">
+
+                <label>FIRST VALUE</label>
+
+                <input
+                        type="number"
+                        id="firstValue">
+
+                <select id="firstUnit">
+
+                </select>
+
+            </div>
+
+            <div class="operator-field">
+
+                <label>OPERATOR</label>
+
+                <select id="operator">
+
+                    <option value="add">+</option>
+
+                    <option value="subtract">−</option>
+
+                    <option value="divide">÷</option>
+
+                </select>
+
+            </div>
+
+            <div class="field">
+
+                <label>SECOND VALUE</label>
+
+                <input
+                        type="number"
+                        id="secondValue">
+
+                <select id="secondUnit">
+
+                </select>
+
+            </div>
+
+        </div>
+
+        <div class="field">
+
+            <label>RESULT UNIT</label>
+
+            <select id="resultUnit">
+
+            </select>
+
+        </div>
+
+        <button id="calculateButton">
+
+            Calculate
+
+        </button>
+
+        <div class="result-box">
+
+            <h3>Result</h3>
+
+            <p id="arithmeticResult">
+
+                -
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    
+
+
+
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>
