@@ -1,10 +1,22 @@
 pipeline {
     agent any
 
+    tools {
+        jdk 'jdk23'
+        maven 'maven'
+    }
+
     stages {
+
         stage('Checkout') {
             steps {
-                echo 'GitHub connected successfully!'
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'mvn clean package -DskipTests'
             }
         }
     }
