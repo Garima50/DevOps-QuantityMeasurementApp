@@ -18,7 +18,7 @@ public class OAuth2SuccessHandler implements AuthenticationSuccessHandler {
     private final JwtService jwtService;
 
     // Where the React (Vite) frontend runs in development.
-    private static final String FRONTEND_URL = "http://localhost:5173";
+    private static final String FRONTEND_URL = "http://51.20.29.155:8081";
 
     public OAuth2SuccessHandler(JwtService jwtService) {
         this.jwtService = jwtService;
