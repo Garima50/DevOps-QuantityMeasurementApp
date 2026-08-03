@@ -83,7 +83,7 @@ public class SecurityConfig {
                 )
 
                 .sessionManagement(session ->
-                session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                session.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
         )
 
                 .addFilterBefore(
