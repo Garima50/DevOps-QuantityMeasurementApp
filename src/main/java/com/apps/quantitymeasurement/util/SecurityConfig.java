@@ -71,6 +71,7 @@ public class SecurityConfig {
                                 "/css/**",
                                 "/js/**",
                                 "/images/**",
+                                "/**/*.svg",
                                 "/api/quantity/**"
                         ).permitAll()
                         .anyRequest().authenticated()
