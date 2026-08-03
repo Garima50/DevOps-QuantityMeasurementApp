@@ -62,6 +62,7 @@ public class SecurityConfig {
                                 "/configuration/security",
                                 "/error",
                                 "/",
+                                "/assets/**",
                                 "/index.html",
                                 "/css/**",
                                 "/js/**",
