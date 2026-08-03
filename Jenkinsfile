@@ -55,15 +55,13 @@ pipeline {
     stage('Deploy') {
         steps {
             sh '''
-                docker stop quantity-app || true
-                docker rm quantity-app || true
-
-                docker pull ${IMAGE_NAME}:${IMAGE_TAG}
+                docker stop quantity-app-simple || true
+                docker rm quantity-app-simple || true
 
                 docker run -d \
-                    --name quantity-app \
-                    -p 8080:8080 \
-                    ${IMAGE_NAME}:${IMAGE_TAG}
+                  --name quantity-app-simple \
+                  -p 8080:8080 \
+                  ${IMAGE_NAME}:${IMAGE_TAG}
             '''
         }
     }
