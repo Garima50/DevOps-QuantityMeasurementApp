@@ -53,18 +53,23 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh '''
-                    docker stop quantity-app-simple || true
-                    docker rm quantity-app-simple || true
+                withCredentials([
+                    string(credentialsId: 'google-client-id', variable: 'GOOGLE_CLIENT_ID'),
+                    string(credentialsId: 'google-client-secret', variable: 'GOOGLE_CLIENT_SECRET')
+                ]) {
+                    sh '''
+                        docker stop quantity-app-simple || true
+                        docker rm quantity-app-simple || true
 
-                    docker run -d \
-                      --name quantity-app-simple \
-                      -p 8081:8080 \
-                      ${IMAGE_NAME}:${IMAGE_TAG}
-                '''
+                        docker run -d \
+                          --name quantity-app-simple \
+                          -p 8081:8080 \
+                          -e GOOGLE_CLIENT_ID="$GOOGLE_CLIENT_ID" \
+                          -e GOOGLE_CLIENT_SECRET="$GOOGLE_CLIENT_SECRET" \
+                          ${IMAGE_NAME}:${IMAGE_TAG}
+                    '''
+                }
             }
         }
-
-    }   // closes stages
-
-}   // closes pipeline
+           }
+           }// closes pipeline
