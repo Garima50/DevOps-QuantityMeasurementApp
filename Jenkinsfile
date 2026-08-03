@@ -51,17 +51,20 @@ pipeline {
             }
         }
 
-    stage('Deploy') {
-        steps {
-            sh '''
-                docker stop quantity-app-simple || true
-                docker rm quantity-app-simple || true
+        stage('Deploy') {
+            steps {
+                sh '''
+                    docker stop quantity-app-simple || true
+                    docker rm quantity-app-simple || true
 
-                docker run -d \
-                  --name quantity-app-simple \
-                  -p 8081:8080 \
-                  ${IMAGE_NAME}:${IMAGE_TAG}
-            '''
+                    docker run -d \
+                      --name quantity-app-simple \
+                      -p 8081:8080 \
+                      ${IMAGE_NAME}:${IMAGE_TAG}
+                '''
+            }
         }
-    }
-}
+
+    }   // closes stages
+
+}   // closes pipeline
